@@ -3,627 +3,859 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marian Esco — AI Agent Orchestrator</title>
-    <meta name="description" content="I build the systems that make AI agents accountable in production. Multi-agent orchestration, runtime governance, audit-grade observability.">
-    <meta property="og:title" content="Marian Esco — AI Agent Orchestrator">
-    <meta property="og:description" content="I build the systems that make AI agents accountable in production.">
+
+    <!-- SEO + AEO -->
+    <title>Marian Esco — AI Agent Orchestration, Runtime Governance & Context Engineering</title>
+    <meta name="description" content="Marian Esco designs and operates multi-agent AI systems in production. 5 AI actors, 445+ knowledge connections, 34 architectural decisions. Audit, advisory, and implementation for teams running AI agents at scale.">
+    <meta name="author" content="Marian Esco">
+    <meta name="keywords" content="AI agent orchestration, runtime governance, context engineering, multi-agent systems, MCP, AI audit, agent observability, Marian Esco">
+    <link rel="canonical" href="https://aimarian.com">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Marian Esco — AI Agent Orchestration">
+    <meta property="og:description" content="Production AI agent orchestration. 5 actors coordinated daily with runtime governance and audit-grade observability.">
     <meta property="og:url" content="https://aimarian.com">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AIMarian">
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Marian Esco — AI Agent Orchestrator">
-    <meta name="twitter:description" content="I build the systems that make AI agents accountable in production.">
-    <link rel="canonical" href="https://aimarian.com">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <meta name="twitter:title" content="Marian Esco — AI Agent Orchestration">
+    <meta name="twitter:description" content="Production AI agent orchestration. Audit, advisory, and implementation.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>">
+
+    <!-- Schema.org: Person -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Marian Esco",
+        "url": "https://aimarian.com",
+        "jobTitle": "AI Agent Orchestrator",
+        "description": "Designs and operates multi-agent AI systems in production with runtime governance, structured handoffs, and audit-grade observability.",
+        "email": "AImarian@proton.me",
+        "sameAs": [
+            "https://www.linkedin.com/in/connecter/",
+            "https://aispecialops.gumroad.com"
+        ],
+        "knowsAbout": [
+            "AI Agent Orchestration",
+            "Runtime Governance",
+            "Context Engineering",
+            "Multi-Agent Systems",
+            "Model Context Protocol (MCP)",
+            "AI Observability"
+        ]
+    }
+    </script>
+
+    <!-- Schema.org: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is AI agent orchestration?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI agent orchestration is the coordination of multiple AI agents working together on complex tasks. Instead of one AI doing everything, you have specialists: one researches, one qualifies, one drafts, one executes. Each agent has defined scope, governance rules, and structured handoffs to the next. Think of it like a well-run team where everyone knows their role and there is a clear chain of responsibility."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is runtime governance for AI agents?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Runtime governance means verifying what an AI agent is doing at the moment it acts, not after. Traditional security checks who the agent is (authentication). Runtime governance checks what the agent is doing per action, in real time, with the ability to block unauthorized actions before they execute. Every action gets a timestamp, scope definition, and outcome record."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is context engineering for AI agents?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Context engineering is designing the information architecture that feeds AI agents. Before an agent can make good decisions, it needs the right context: knowledge graphs, session memory, cross-channel intelligence, and structured data pipelines. Without context engineering, agents guess. With it, they have full situational awareness for every action they take."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does Marian Esco's AI orchestration system work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The system coordinates 5 AI actors through structured handoffs with governance rules enforced per action. It uses an Obsidian knowledge graph (67 notes, 445+ wikilinks) as the single source of truth, a terminal command center (24 commands) for operations, auto-sync pipelines that run every 12 hours, and 5 capture layers (terminal, voice, mobile, desktop, reminders). Every agent action is logged with timestamp, scope, and outcome."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between AI agent authentication and runtime governance?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Authentication verifies WHO the agent is. Runtime governance verifies WHAT the agent is doing. Authentication happens once at login. Governance happens at every action. Most systems only have authentication. The gap is that an authenticated agent can still access data it should not, execute actions outside its scope, or make decisions without oversight. Runtime governance closes that gap."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does an AI agent audit take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A structured AI agent audit can be completed in 24 hours using a four-phase process: inventory all running agents, score governance gaps across 6 dimensions, analyze findings, and deliver a prioritized action plan with executive summary. The methodology maps every agent, identifies what each one can access, and surfaces governance gaps with specific recommendations."
+                }
+            }
+        ]
+    }
+    </script>
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
 
+        :root {
+            --bg: #06060a;
+            --bg-elevated: #0c0c12;
+            --bg-card: #0f0f16;
+            --border: rgba(255,255,255,0.06);
+            --border-hover: rgba(255,255,255,0.12);
+            --text: #a0a0b0;
+            --text-bright: #e8e8f0;
+            --text-dim: #5a5a6e;
+            --accent: #c9a55a;
+            --accent-dim: rgba(201,165,90,0.12);
+            --accent-glow: rgba(201,165,90,0.06);
+            --green: #4ade80;
+            --green-dim: rgba(74,222,128,0.1);
+            --mono: 'JetBrains Mono', 'SF Mono', 'Monaco', monospace;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
-            background: #0a0a0f;
-            color: #c4c9d4;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.7;
             overflow-x: hidden;
         }
 
-        ::selection { background: rgba(99, 179, 237, 0.3); }
+        ::selection { background: rgba(201,165,90,0.25); }
+
+        /* NOISE TEXTURE */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
 
         /* NAV */
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 1.2rem 2rem;
-            background: rgba(10, 10, 15, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.5rem 3rem;
+            background: rgba(6,6,10,0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
         }
+        .nav-name { font-weight: 600; font-size: 0.85rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.5px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--text-bright); }
 
-        .nav-name {
-            font-weight: 700;
-            font-size: 1rem;
-            color: #e2e8f0;
-            letter-spacing: 0.5px;
+        /* LAYOUT */
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 7rem 0; }
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); max-width: 1080px; margin: 0 auto; }
+
+        /* TYPOGRAPHY */
+        h1 { font-size: 3.6rem; font-weight: 800; line-height: 1.1; color: var(--text-bright); letter-spacing: -2.5px; }
+        h2 { font-size: 2.2rem; font-weight: 700; color: var(--text-bright); letter-spacing: -1.5px; margin-bottom: 1rem; }
+        h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-bright); margin-bottom: 0.6rem; letter-spacing: -0.3px; }
+        h4 { font-size: 0.95rem; font-weight: 600; color: var(--text-bright); margin-bottom: 0.4rem; }
+
+        .eyebrow {
+            font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
+            letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
         }
+        .section-desc { font-size: 1rem; color: var(--text); max-width: 560px; line-height: 1.8; font-weight: 300; margin-bottom: 3.5rem; }
 
-        .nav-links { display: flex; gap: 1.8rem; }
-
-        .nav-links a {
-            color: #8892a4;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: color 0.2s;
-            letter-spacing: 0.3px;
+        /* TL;DR BLOCK */
+        .tldr {
+            background: var(--accent-dim);
+            border: 1px solid rgba(201,165,90,0.15);
+            border-radius: 6px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2.5rem;
         }
-
-        .nav-links a:hover { color: #e2e8f0; }
-
-        /* SECTIONS */
-        section {
-            padding: 7rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+        .tldr-label { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 2px; color: var(--accent); margin-bottom: 0.4rem; text-transform: uppercase; }
+        .tldr p { font-size: 0.9rem; color: var(--text-bright); line-height: 1.7; font-weight: 400; }
 
         /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 5rem;
-            position: relative;
-        }
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 5rem; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; width: 800px; height: 800px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%); border-radius: 50%; top: -20%; right: -20%; pointer-events: none; }
+        .hero-eyebrow { font-family: var(--mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; opacity:0; animation: fadeUp .8s ease forwards .2s; }
+        .hero h1 { margin-bottom: 2rem; max-width: 720px; opacity:0; animation: fadeUp .8s ease forwards .4s; }
+        .hero-sub { font-size: 1.1rem; color: var(--text); max-width: 540px; line-height: 1.9; margin-bottom: 1.5rem; font-weight: 300; opacity:0; animation: fadeUp .8s ease forwards .6s; }
+        .hero-cta { display: flex; gap: 1rem; align-items: center; opacity:0; animation: fadeUp .8s ease forwards .9s; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(99, 179, 237, 0.04) 0%, transparent 70%);
-            border-radius: 50%;
-            top: 10%;
-            right: -15%;
-            pointer-events: none;
-        }
+        .btn-gold { display: inline-flex; align-items: center; padding: 0.85rem 2rem; background: var(--accent); color: var(--bg); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.5px; border-radius: 4px; text-decoration: none; transition: all 0.3s; }
+        .btn-gold:hover { background: #d4b06a; transform: translateY(-1px); }
+        .btn-outline { display: inline-flex; align-items: center; padding: 0.85rem 2rem; border: 1px solid var(--border); color: var(--text); font-weight: 500; font-size: 0.85rem; letter-spacing: 0.5px; border-radius: 4px; text-decoration: none; transition: all 0.3s; }
+        .btn-outline:hover { border-color: var(--border-hover); color: var(--text-bright); }
 
-        .hero-label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #63b3ed;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: slideUp 0.6s ease forwards 0.2s;
-        }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            font-weight: 800;
-            line-height: 1.1;
-            color: #f0f4f8;
-            margin-bottom: 1.5rem;
-            letter-spacing: -2px;
-            opacity: 0;
-            animation: slideUp 0.6s ease forwards 0.35s;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, #63b3ed 0%, #68d391 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-sub {
-            font-size: 1.2rem;
-            color: #8892a4;
-            max-width: 580px;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-            opacity: 0;
-            animation: slideUp 0.6s ease forwards 0.5s;
-        }
-
-        .hero-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: slideUp 0.6s ease forwards 0.65s;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.8rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            letter-spacing: 0.3px;
-        }
-
-        .btn-primary {
-            background: #63b3ed;
-            color: #0a0a0f;
-        }
-
-        .btn-primary:hover {
-            background: #90cdf4;
-            transform: translateY(-1px);
-        }
-
-        .btn-ghost {
-            border: 1px solid rgba(255,255,255,0.12);
-            color: #c4c9d4;
-        }
-
-        .btn-ghost:hover {
-            border-color: rgba(255,255,255,0.25);
-            color: #f0f4f8;
-            transform: translateY(-1px);
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* SECTION HEADERS */
-        .section-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #63b3ed;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #f0f4f8;
-            margin-bottom: 1.2rem;
-            letter-spacing: -1px;
-        }
-
-        .section-desc {
-            font-size: 1.05rem;
-            color: #8892a4;
-            max-width: 650px;
-            margin-bottom: 3rem;
-            line-height: 1.8;
-        }
-
-        /* WHAT I DO - CARDS */
-        .cards-grid {
+        /* PROBLEM-SOLUTION BLOCKS */
+        .problem-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
-
-        .card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 10px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .card:hover {
-            border-color: rgba(99, 179, 237, 0.2);
-            transform: translateY(-3px);
-            background: rgba(255,255,255,0.035);
-        }
-
-        .card-icon {
-            width: 40px;
-            height: 40px;
+        .problem-block, .solution-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            margin-bottom: 1.2rem;
+            padding: 2.2rem;
         }
+        .problem-block { border-top: 2px solid #e05252; }
+        .solution-block { border-top: 2px solid var(--green); }
+        .block-label { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+        .problem-block .block-label { color: #e05252; }
+        .solution-block .block-label { color: var(--green); }
+        .problem-block p, .solution-block p { font-size: 0.9rem; color: var(--text); line-height: 1.8; }
+        .simple-explain { font-size: 0.82rem; color: var(--text-dim); line-height: 1.7; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); font-style: italic; }
 
-        .card-icon-blue { background: rgba(99, 179, 237, 0.12); }
-        .card-icon-green { background: rgba(104, 211, 145, 0.12); }
-        .card-icon-purple { background: rgba(183, 148, 244, 0.12); }
+        /* SHOWCASE CARDS */
+        .showcase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .showcase-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 2.5rem; transition: all 0.4s; }
+        .showcase-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+        .showcase-card.full { grid-column: 1 / -1; background: linear-gradient(135deg, var(--bg-card) 0%, rgba(201,165,90,0.03) 100%); border-color: rgba(201,165,90,0.1); }
+        .showcase-label { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+        .showcase-card p { font-size: 0.9rem; color: var(--text); line-height: 1.8; font-weight: 300; }
 
-        .card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #e2e8f0;
-            margin-bottom: 0.7rem;
-        }
+        /* TERMINAL */
+        .terminal { background: #0a0a10; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 1.5rem; }
+        .terminal-bar { display: flex; align-items: center; gap: 6px; padding: 0.8rem 1rem; background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--border); }
+        .terminal-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-dim); opacity: 0.4; }
+        .terminal-title { font-family: var(--mono); font-size: 0.7rem; color: var(--text-dim); margin-left: 0.5rem; }
+        .terminal-body { padding: 1.2rem 1.5rem; font-family: var(--mono); font-size: 0.78rem; line-height: 1.9; color: var(--text); overflow-x: auto; white-space: pre; }
+        .t-prompt { color: var(--accent); }
+        .t-cmd { color: var(--text-bright); }
+        .t-comment { color: var(--text-dim); }
+        .t-ok { color: var(--green); }
+        .t-dim { color: var(--text-dim); }
+        .t-hl { color: var(--accent); }
 
-        .card p {
-            font-size: 0.9rem;
-            color: #8892a4;
-            line-height: 1.7;
-        }
-
-        .card-stat {
-            margin-top: 1.2rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
-            font-size: 0.8rem;
-            color: #68d391;
-        }
-
-        /* PROOF - STATS */
-        .stats-grid {
+        /* PROOF IMAGES */
+        .proof-gallery {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 10px;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #f0f4f8;
-            font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: #8892a4;
-            line-height: 1.4;
-        }
-
-        .proof-quote {
-            background: rgba(99, 179, 237, 0.04);
-            border-left: 3px solid #63b3ed;
-            padding: 1.5rem 2rem;
-            border-radius: 0 8px 8px 0;
             margin-top: 2rem;
         }
-
-        .proof-quote p {
-            font-size: 1rem;
-            color: #c4c9d4;
-            font-style: italic;
-            line-height: 1.8;
+        .proof-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
         }
+        .proof-item:hover { border-color: var(--border-hover); }
+        .proof-item.wide { grid-column: 1 / -1; }
+        .proof-item.compact img { max-height: 240px; object-fit: contain; padding: 1rem; background: #0a0a10; }
+        .proof-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        .proof-item:hover img { opacity: 1; }
+        .proof-caption {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+        .proof-caption h4 { font-size: 0.85rem; color: var(--text-bright); margin-bottom: 0.2rem; }
+        .proof-caption p { font-size: 0.75rem; color: var(--text-dim); line-height: 1.5; }
+        .proof-gallery-3col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 1024px) { .proof-gallery-3col { grid-template-columns: 1fr; } }
+
+        /* STATS */
+        .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 3rem; }
+        .stat { padding: 2.5rem 1.5rem; text-align: center; border-right: 1px solid var(--border); background: var(--bg-card); }
+        .stat:last-child { border-right: none; }
+        .stat-number { font-family: var(--mono); font-size: 2rem; font-weight: 700; color: var(--text-bright); line-height: 1; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 0.75rem; color: var(--text-dim); }
+
+        /* ENGAGE */
+        .engage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .engage-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 2.5rem 2rem; transition: all 0.3s; position: relative; }
+        .engage-card:hover { border-color: var(--border-hover); }
+        .engage-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); border-radius: 8px 8px 0 0; opacity: 0; transition: opacity 0.3s; }
+        .engage-card:hover::before { opacity: 1; }
+        .engage-tier { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+        .engage-card p { font-size: 0.85rem; color: var(--text); line-height: 1.8; font-weight: 300; margin-bottom: 1.2rem; }
+        .engage-list { font-size: 0.78rem; color: var(--text-dim); line-height: 2; }
+        .engage-list span { display: block; }
+        .engage-list span::before { content: '→ '; color: var(--accent); }
+
+        /* FAQ */
+        .faq-list { max-width: 760px; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1.8rem 0; }
+        .faq-item:first-child { border-top: 1px solid var(--border); }
+        .faq-q { font-size: 1rem; font-weight: 600; color: var(--text-bright); margin-bottom: 0.8rem; cursor: default; }
+        .faq-a { font-size: 0.9rem; color: var(--text); line-height: 1.9; font-weight: 300; }
+        .faq-a .cite { display: block; margin-top: 0.8rem; font-family: var(--mono); font-size: 0.72rem; color: var(--text-dim); }
 
         /* PRODUCTS */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.2rem;
-        }
+        .products-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+        .product-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; transition: all 0.3s; }
+        .product-item:hover { border-color: var(--border-hover); }
+        .product-name { font-size: 0.85rem; font-weight: 600; color: var(--text-bright); margin-bottom: 0.3rem; line-height: 1.4; }
+        .product-meta { font-size: 0.72rem; color: var(--text-dim); margin-bottom: 0.8rem; }
+        .product-price { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); }
+        .store-link { text-align: center; margin-top: 2rem; }
+        .store-link a { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); text-decoration: none; letter-spacing: 1px; border-bottom: 1px solid rgba(201,165,90,0.3); padding-bottom: 2px; transition: all 0.3s; }
+        .store-link a:hover { border-color: var(--accent); }
 
-        .product {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-            padding: 1.3rem 1.5rem;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 8px;
-            transition: all 0.25s ease;
-        }
+        /* BACKGROUND TIMELINE */
+        .bg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .timeline { list-style: none; }
+        .timeline li { position: relative; padding-left: 1.5rem; padding-bottom: 1.5rem; border-left: 1px solid var(--border); font-size: 0.88rem; color: var(--text); line-height: 1.7; }
+        .timeline li::before { content: ''; position: absolute; left: -3px; top: 8px; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+        .timeline li:last-child { border-left: none; }
+        .timeline .year { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 1px; display: block; margin-bottom: 0.2rem; }
 
-        .product:hover {
-            border-color: rgba(99, 179, 237, 0.2);
-            background: rgba(255,255,255,0.035);
+        /* CITATION BLOCK */
+        .citation {
+            background: rgba(99,179,237,0.04);
+            border-left: 3px solid var(--accent);
+            padding: 1.5rem 2rem;
+            border-radius: 0 6px 6px 0;
+            margin: 2rem 0;
         }
-
-        .product-price {
-            font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #68d391;
-            background: rgba(104, 211, 145, 0.1);
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-            white-space: nowrap;
-        }
-
-        .product-info { flex: 1; }
-
-        .product-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #e2e8f0;
-            margin-bottom: 0.2rem;
-        }
-
-        .product-meta {
-            font-size: 0.78rem;
-            color: #6b7280;
-        }
-
-        .products-cta {
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        /* DIVIDER */
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+        .citation p { font-size: 0.95rem; color: var(--text-bright); line-height: 1.8; font-weight: 400; }
+        .citation .source { font-family: var(--mono); font-size: 0.7rem; color: var(--text-dim); margin-top: 0.5rem; }
 
         /* FOOTER */
-        footer {
-            padding: 4rem 2rem;
-            text-align: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .footer-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #f0f4f8;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-role {
-            font-size: 0.9rem;
-            color: #8892a4;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-links a {
-            color: #63b3ed;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover { color: #90cdf4; }
-
-        .footer-credit {
-            font-size: 0.75rem;
-            color: #4a5568;
-            margin-top: 2rem;
-        }
+        footer { padding: 5rem 0; text-align: center; }
+        .footer-name { font-size: 0.85rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; font-size: 0.82rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--text-bright); }
+        .footer-close { font-size: 0.72rem; color: var(--text-dim); font-style: italic; margin-top: 2rem; }
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .cards-grid { grid-template-columns: repeat(2, 1fr); }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .showcase-grid, .problem-grid, .proof-gallery, .proof-gallery-3col { grid-template-columns: 1fr; }
+            .showcase-card.full { grid-column: auto; }
+            .proof-item.wide { grid-column: auto; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .stat { border-bottom: 1px solid var(--border); }
+            .engage-grid { grid-template-columns: 1fr; }
+            .products-strip { grid-template-columns: repeat(2, 1fr); }
+            .bg-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
-
         @media (max-width: 768px) {
             nav { padding: 1rem 1.5rem; }
-            .nav-links { gap: 1rem; }
-            .nav-links a { font-size: 0.8rem; }
-
-            section { padding: 4rem 1.5rem; }
-
-            .hero { min-height: 90vh; }
-            .hero h1 { font-size: 2.4rem; letter-spacing: -1px; }
-            .hero-sub { font-size: 1.05rem; }
-
-            .section-title { font-size: 1.8rem; }
-
-            .cards-grid,
-            .stats-grid,
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stat { padding: 1.5rem 1rem; }
-            .stat-number { font-size: 2rem; }
+            .nav-links { gap: 1.5rem; }
+            .container { padding: 0 1.5rem; }
+            section { padding: 5rem 0; }
+            h1 { font-size: 2.4rem; letter-spacing: -1.5px; }
+            h2 { font-size: 1.7rem; }
+            .stats-row { grid-template-columns: 1fr 1fr; }
+            .products-strip { grid-template-columns: 1fr; }
+            .hero-cta { flex-direction: column; }
+            .btn-gold, .btn-outline { width: 100%; justify-content: center; }
         }
-
         @media (max-width: 480px) {
-            .hero h1 { font-size: 2rem; }
-            .hero-links { flex-direction: column; }
-            .btn { width: 100%; justify-content: center; }
+            h1 { font-size: 2rem; }
+            .stats-row { grid-template-columns: 1fr; }
+            .stat { border-right: none; border-bottom: 1px solid var(--border); }
         }
     </style>
 </head>
 <body>
 
     <!-- NAV -->
-    <nav>
-        <div class="nav-name">AIMarian</div>
+    <nav aria-label="Main navigation">
+        <div class="nav-name">Marian Esco</div>
         <div class="nav-links">
-            <a href="#what">What I Do</a>
+            <a href="#problem">The Problem</a>
+            <a href="#how">How I Solve It</a>
             <a href="#proof">Proof</a>
-            <a href="#products">Products</a>
+            <a href="#engage">Work With Me</a>
+            <a href="#faq">FAQ</a>
             <a href="mailto:AImarian@proton.me">Contact</a>
         </div>
     </nav>
 
+    <!-- ═══════════════════════════════════════════ -->
     <!-- HERO -->
-    <section class="hero" id="hero">
-        <div class="hero-label">AI Agent Orchestrator</div>
-        <h1>I build the systems<br>that make AI agents<br><span>accountable in production.</span></h1>
-        <p class="hero-sub">Multi-agent orchestration, runtime governance, and audit-grade observability. Not theory.. practice. Five AI actors coordinated daily through structured handoffs with governance rules enforced per action.</p>
-        <div class="hero-links">
-            <a href="https://www.linkedin.com/in/connecter/" target="_blank" class="btn btn-primary">LinkedIn</a>
-            <a href="https://aispecialops.gumroad.com" target="_blank" class="btn btn-ghost">Gumroad Store</a>
-            <a href="mailto:AImarian@proton.me" class="btn btn-ghost">AImarian@proton.me</a>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- WHAT I DO -->
-    <section id="what">
-        <div class="section-label">What I Do</div>
-        <div class="section-title">Three things, all in production.</div>
-        <div class="section-desc">Most people talk about AI agents. I build the infrastructure that keeps them accountable. Every system below runs daily.</div>
-
-        <div class="cards-grid">
-            <div class="card">
-                <div class="card-icon card-icon-blue">⚡</div>
-                <h3>Multi-Agent Orchestration</h3>
-                <p>Five AI actors coordinated through structured handoffs. Each agent has a defined scope, clear inputs/outputs, and governance rules. Not one monolithic prompt.. a system of specialists.</p>
-                <div class="card-stat">5 actors · structured handoffs · daily ops</div>
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="hero" id="top">
+        <div class="container">
+            <p class="hero-eyebrow" role="doc-subtitle">AI Agent Orchestration · Advisory · Implementation</p>
+            <h1>Your AI agents are running.<br>Nobody's watching what they actually do.</h1>
+            <p class="hero-sub">I build the oversight layer. Five AI actors coordinated in production with runtime governance, structured handoffs, and full audit trails. Every action verified. Every decision traceable.</p>
+            <div class="tldr" style="max-width:540px; opacity:0; animation: fadeUp .8s ease forwards .75s;">
+                <div class="tldr-label">TL;DR</div>
+                <p>I design multi-agent AI systems where every agent action is governed, logged, and auditable. I've done it in production for 1+ year. I can audit yours in 24 hours, design your architecture, or build the whole thing.</p>
             </div>
-            <div class="card">
-                <div class="card-icon card-icon-green">🛡</div>
-                <h3>Runtime Governance</h3>
-                <p>Every agent action is verified before execution. Not after-the-fact logging. Real-time enforcement. Per action. With audit-grade observability so you can trace exactly what happened and why.</p>
-                <div class="card-stat">per-action verification · full audit trail</div>
-            </div>
-            <div class="card">
-                <div class="card-icon card-icon-purple">🔧</div>
-                <h3>Production Deployment</h3>
-                <p>Terminal command center (24 commands), auto-sync pipelines, knowledge graph with 445+ connections, capture layers across 5 surfaces. Everything built to run unsupervised.</p>
-                <div class="card-stat">24 commands · 5 capture layers · auto-sync</div>
+            <div class="hero-cta">
+                <a href="mailto:AImarian@proton.me" class="btn-gold">Start a Conversation</a>
+                <a href="https://www.linkedin.com/in/connecter/" target="_blank" class="btn-outline">LinkedIn</a>
             </div>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- PROOF -->
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- THE PROBLEM I SOLVE -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="problem">
+        <div class="container">
+            <div class="eyebrow">The Problem</div>
+            <h2>AI agents act. Nobody verifies what they did.</h2>
+            <div class="section-desc">There is a gap between giving an AI agent credentials and knowing what it actually does with them. I close that gap.</div>
+
+            <div class="problem-grid">
+                <div class="problem-block">
+                    <div class="block-label">What's happening now</div>
+                    <h3>Agents run without oversight</h3>
+                    <p>Your agents have access to data, APIs, and tools. They execute actions based on prompts. But there is no verification at the moment of action. No per-action audit. No structured handoffs between agents. If an agent accesses something it should not.. you find out after the damage is done.</p>
+                    <div class="simple-explain">Simple version: imagine giving 5 employees full access to everything in your company, with no manager checking their work, no paper trail, and no way to see what they did until something breaks.</div>
+                </div>
+                <div class="solution-block">
+                    <div class="block-label">What I build</div>
+                    <h3>Every action governed in real time</h3>
+                    <p>Each agent has a defined scope. Every action is verified before execution. Credentials expire per action. The full chain is logged: what the agent did, what data it touched, what decision it made, and why. Structured handoffs between agents, with human approval gates at critical points.</p>
+                    <div class="simple-explain">Simple version: every AI employee has a job description, a manager reviewing their work in real time, and a complete paper trail. If something goes wrong, you know exactly what happened and when.</div>
+                </div>
+            </div>
+
+            <div class="citation">
+                <p>"Agents need runtime gateways, not just credentials. Authentication verifies WHO. Governance verifies WHAT, per action, in real time."</p>
+                <div class="source">— Core thesis, production-validated across 34 architectural decisions</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HOW I SOLVE IT -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="how">
+        <div class="container">
+            <div class="eyebrow">How I Solve It</div>
+            <h2>Three layers. All in production.</h2>
+            <div class="section-desc">Each layer is built, tested, and running daily. Not slides. Not plans. Live infrastructure.</div>
+
+            <div class="showcase-grid">
+
+                <!-- CONTEXT ENGINEERING -->
+                <div class="showcase-card full">
+                    <div class="showcase-label">Layer 1 · Context Engineering</div>
+                    <h3>Agents make good decisions when they have the right information.</h3>
+                    <p>Before any agent acts, it loads full situational context: a knowledge graph with 445+ connections, session memory, cross-channel intelligence from 5 capture surfaces (terminal, voice, mobile, desktop, reminders). Every morning, every agent starts with the same shared truth.</p>
+                    <div class="simple-explain" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem;">Simple version: before your AI starts working, it reads the briefing. It knows what happened yesterday, what's urgent, what changed. Like a human employee who actually reads their email before starting work.</div>
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
+                            <span class="terminal-title">morning context load — real output</span>
+                        </div>
+                        <div class="terminal-body"><span class="t-comment"># Every day starts here. One command. Full context.</span>
+<span class="t-prompt">$</span> <span class="t-cmd">esco morning</span>
+
+<span class="t-dim">  BRAIN:</span> <span class="t-ok">67 notes</span><span class="t-dim">,</span> <span class="t-ok">445 wikilinks</span> <span class="t-dim">loaded</span>
+<span class="t-dim">  SYNC:</span> <span class="t-ok">✓ 102 files in sync</span>
+<span class="t-dim">  INBOX:</span> <span class="t-hl">1 unsorted</span> <span class="t-dim">→ auto-triage</span>
+<span class="t-dim">  FIELDY:</span> <span class="t-dim">15 voice transcripts indexed</span>
+<span class="t-dim">  REMINDERS:</span> <span class="t-hl">19 active</span> <span class="t-dim">→ top 3 surfaced</span>
+<span class="t-dim">  PIPELINE:</span> <span class="t-ok">✓ live</span>
+
+<span class="t-comment"># 5 capture layers feed into one knowledge graph.</span>
+<span class="t-comment"># Every agent reads from the same source of truth.</span></div>
+                    </div>
+                </div>
+
+                <!-- ORCHESTRATION -->
+                <div class="showcase-card">
+                    <div class="showcase-label">Layer 2 · Orchestration</div>
+                    <h3>Five agents. Defined roles. Structured handoffs.</h3>
+                    <p>Each agent does one thing well. Research agent gathers intel. Qualify agent scores fit. Draft agent writes in voice. Execute agent sends. Learn agent stores patterns. No agent acts outside its scope.</p>
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
+                            <span class="terminal-title">agent handoff chain</span>
+                        </div>
+                        <div class="terminal-body"><span class="t-hl">RESEARCH</span> <span class="t-dim">→ intel gathered, sources cited</span>
+  <span class="t-dim">↓ verified handoff</span>
+<span class="t-hl">QUALIFY</span>  <span class="t-dim">→ ICP scored, intent classified</span>
+  <span class="t-dim">↓ approval gate (human)</span>
+<span class="t-hl">DRAFT</span>   <span class="t-dim">→ message in voice, context-aware</span>
+  <span class="t-dim">↓ review gate (human)</span>
+<span class="t-hl">EXECUTE</span> <span class="t-dim">→ sent, logged, tracked</span>
+  <span class="t-dim">↓ outcome recorded</span>
+<span class="t-hl">LEARN</span>   <span class="t-dim">→ pattern stored for next cycle</span></div>
+                    </div>
+                </div>
+
+                <!-- GOVERNANCE -->
+                <div class="showcase-card">
+                    <div class="showcase-label">Layer 3 · Governance</div>
+                    <h3>Seven rules. No exceptions. Every action logged.</h3>
+                    <p>No operation without approval. Archive, never delete. Credentials expire per action. Documentation is the deliverable. These are not guidelines. They are enforced in code.</p>
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
+                            <span class="terminal-title">governance enforcement</span>
+                        </div>
+                        <div class="terminal-body"><span class="t-ok">RULE 1</span> <span class="t-dim">No operation without explicit approval</span>
+<span class="t-ok">RULE 2</span> <span class="t-dim">Archive, never delete</span>
+<span class="t-ok">RULE 3</span> <span class="t-dim">Every action logged (timestamp + scope + outcome)</span>
+<span class="t-ok">RULE 4</span> <span class="t-dim">Credentials expire per action</span>
+<span class="t-ok">RULE 5</span> <span class="t-dim">Manual first, automate later</span>
+<span class="t-ok">RULE 6</span> <span class="t-dim">Documentation IS the deliverable</span>
+<span class="t-ok">RULE 7</span> <span class="t-dim">Human gate before every execution</span></div>
+                    </div>
+                </div>
+
+                <!-- FULL PIPELINE -->
+                <div class="showcase-card full">
+                    <div class="showcase-label">End-to-End · Auto Pipeline</div>
+                    <h3>Capture → Sort → Link → Sync → Serve. Fully automated.</h3>
+                    <p>Notes from 5 surfaces flow into a single knowledge graph. AI sorts them. Auto-linker adds cross-references. Sync pushes to all agents. Runs every 12 hours automatically, or on demand with one command. Zero manual data entry.</p>
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
+                            <span class="terminal-title">esco pipeline — auto every 12h</span>
+                        </div>
+                        <div class="terminal-body"><span class="t-prompt">$</span> <span class="t-cmd">esco pipeline</span>
+
+<span class="t-dim">  Phase 1:</span> <span class="t-ok">✓ AI sort</span> <span class="t-dim">— 3 notes classified</span>
+<span class="t-dim">  Phase 2:</span> <span class="t-ok">✓ Auto-link</span> <span class="t-dim">— 12 wikilinks added</span>
+<span class="t-dim">  Phase 3:</span> <span class="t-ok">✓ Sync</span> <span class="t-dim">— 67 notes → 102 RAG files</span>
+<span class="t-dim">  Phase 4:</span> <span class="t-ok">✓ Knowledge graph updated</span>
+
+<span class="t-comment"># 5 inputs → 1 knowledge graph → all agents updated</span>
+<span class="t-comment"># Terminal, voice, mobile, desktop, reminders</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PRODUCTION PROOF -->
+    <!-- ═══════════════════════════════════════════ -->
     <section id="proof">
-        <div class="section-label">Production Proof</div>
-        <div class="section-title">Numbers from a live system.</div>
-        <div class="section-desc">This isn't a demo. These are real metrics from the orchestration system I operate every day.</div>
+        <div class="container">
+            <div class="eyebrow">Production Proof</div>
+            <h2>Numbers from a live system. Screenshots from real sessions.</h2>
 
-        <div class="stats-grid">
-            <div class="stat">
-                <div class="stat-number">5</div>
-                <div class="stat-label">AI Actors<br>Coordinated Daily</div>
+            <div class="tldr">
+                <div class="tldr-label">TL;DR</div>
+                <p>This system runs daily. 5 AI actors. 445+ knowledge connections. 24 terminal commands. 34 documented architecture decisions. 10+ enterprise integrations. All metrics are current as of April 2026.</p>
             </div>
-            <div class="stat">
-                <div class="stat-number">66</div>
-                <div class="stat-label">Vault Notes<br>(Obsidian Knowledge Graph)</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">445+</div>
-                <div class="stat-label">Wikilinks<br>(Connected Knowledge)</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">34</div>
-                <div class="stat-label">Architectural Decisions<br>Documented</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">24</div>
-                <div class="stat-label">Terminal Commands<br>(esco.py)</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Enterprise<br>Integrations</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">155K+</div>
-                <div class="stat-label">Words Distilled<br>Into Frameworks</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">8</div>
-                <div class="stat-label">Digital Products<br>Built & Ready</div>
-            </div>
-        </div>
 
-        <div class="proof-quote">
-            <p>I built the methodology, ran it in production, and packaged the knowledge. Five years managing 400+ people in operations. Then TensorFlow since 2017, LLMs since market availability, and 1+ year of production MCP orchestration. The system you see here is the result.</p>
+            <div class="stats-row">
+                <div class="stat"><div class="stat-number">5</div><div class="stat-label">AI Actors in Production</div></div>
+                <div class="stat"><div class="stat-number">445+</div><div class="stat-label">Knowledge Connections</div></div>
+                <div class="stat"><div class="stat-number">34</div><div class="stat-label">Architecture Decisions</div></div>
+                <div class="stat"><div class="stat-number">24</div><div class="stat-label">Terminal Commands</div></div>
+            </div>
+
+            <h3>From real production sessions</h3>
+
+            <!-- ROW 1: Hero image — full width -->
+            <div class="proof-gallery" style="grid-template-columns: 1fr; margin-bottom: 0;">
+                <div class="proof-item wide">
+                    <img src="img/multi-agent-orchestration.jpg" alt="Multi-Agent Orchestration System by Marian Esco: 5 AI actors coordinated through structured handoffs with runtime governance, session memory, and audit-grade observability" loading="lazy">
+                    <div class="proof-caption">
+                        <h4>Multi-Agent Orchestration System</h4>
+                        <p>5 AI actors coordinated through structured handoffs. Runtime governance. Session memory. Audit-grade observability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 2: Architecture pair -->
+            <div class="proof-gallery">
+                <div class="proof-item">
+                    <img src="img/orchestration-before-after.png" alt="Before and after comparison: scattered tools vs unified AI orchestration layer. Results: 70% less manual work, zero missed follow-ups, instant report generation, 6 weeks to implement." loading="lazy">
+                    <div class="proof-caption">
+                        <h4>Before / After: Orchestration Layer</h4>
+                        <p>From scattered tools to unified AI command center. 70% less manual work. Zero missed follow-ups.</p>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <img src="img/gateway-control-plane.jpg" alt="Gateway Control Plane architecture: Desktop, CLI, Web UI, and Mobile interfaces feed into Gateway Server with Auto-Reply, Access Control, and Session Manager. Agent Runtime includes Pi Agent Core, Memory Search, Tool Executor, and Prompt Builder." loading="lazy">
+                    <div class="proof-caption">
+                        <h4>Gateway Control Plane</h4>
+                        <p>Full architecture: control interfaces → gateway server → agent runtime → tool execution. Every layer governed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 3: Production evidence pair -->
+            <div class="proof-gallery">
+                <div class="proof-item">
+                    <img src="img/effectiveness-test.png" alt="AI Effectiveness Test results: Context Quality 8/10, Query Speed 9/10, Update Accuracy 8/10, Continuity 7/10, AI Dependency Ratio approximately 20:1" loading="lazy">
+                    <div class="proof-caption">
+                        <h4>AI Effectiveness Test Results</h4>
+                        <p>Independent test over 3 weeks. Context quality 8/10. Query speed 9/10. AI dependency ratio ~20:1.</p>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <img src="img/live-batch-execution.png" alt="Live batch execution session showing AI system processing 143 leads with automated audit checks, system state verification, and campaign status tracking" loading="lazy">
+                    <div class="proof-caption">
+                        <h4>Live Batch Execution</h4>
+                        <p>Real session: 143 leads processed, automated audit checks, full system state verification.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 4: System infrastructure — 3 col, compact for Civic items -->
+            <div class="proof-gallery-3col">
+                <div class="proof-item">
+                    <img src="img/capture-surface.jpg" alt="5 capture layers feeding into BRAIN knowledge graph: Voice (Fieldy), Terminal (esco.py), Desktop (Obsidian), Phone (iPhone Notes), Reminders (Apple Reminders)" loading="lazy">
+                    <div class="proof-caption">
+                        <h4>5 Capture Layers</h4>
+                        <p>Voice, terminal, desktop, phone, reminders. All feed one knowledge graph.</p>
+                    </div>
+                </div>
+                <div class="proof-item compact">
+                    <img src="img/guardrail-stack.jpg" alt="Postgres Guardrail Stack: 7 active guardrails including Block Prompt Injection, Block SQL Comments, Block Query Stacking, Result Row Limit, Block PII in Requests, Redact PII from Responses, Block Dynamic SQL Construction" loading="lazy">
+                    <div class="proof-caption">
+                        <h4>Guardrail Stack</h4>
+                        <p>7 production guardrails. Prompt injection, PII redaction, query limits. All active.</p>
+                    </div>
+                </div>
+                <div class="proof-item">
+                    <img src="img/esco-health-check.jpg" alt="esco health terminal output: System Health 10/10, 67 vault notes, 445 wikilinks, 102 RAG files, 24 terminal commands, 5 capture layers, 8/8 products, auto-sync live" loading="lazy">
+                    <div class="proof-caption">
+                        <h4>System Health: 10/10</h4>
+                        <p>Live terminal output. 67 notes, 445 links, 102 RAG files, auto-sync running.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 5: Blueprint + Brand -->
+            <div class="proof-gallery">
+                <div class="proof-item">
+                    <img src="img/orchestration-blueprint.jpg" alt="Personal orchestration blueprint showing Decision Support Layer connecting Strategic Priorities, Knowledge Hub, Stakeholder Intelligence, and Information Flows" loading="lazy">
+                    <div class="proof-caption">
+                        <h4>Orchestration Blueprint</h4>
+                        <p>The architecture behind the system: decision support layer connecting priorities, knowledge, and intelligence.</p>
+                    </div>
+                </div>
+                <div class="proof-item compact" style="background: #000;">
+                    <img src="img/zero-one-infinity.jpg" alt="0-1-Infinity symbol: the operating philosophy behind the system. Zero assumptions, one source of truth, infinite scalability." loading="lazy" style="background: #000;">
+                    <div class="proof-caption">
+                        <h4>0 · 1 · ∞</h4>
+                        <p>Zero assumptions. One source of truth. Infinite scalability. The operating philosophy.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- PRODUCTS -->
-    <section id="products">
-        <div class="section-label">Products</div>
-        <div class="section-title">Frameworks from production, not theory.</div>
-        <div class="section-desc">Everything here comes from building and operating multi-agent systems. Battle-tested patterns, SOPs, and decision frameworks.. packaged so you can use them.</div>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ENGAGEMENT MODELS -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="engage">
+        <div class="container">
+            <div class="eyebrow">Work With Me</div>
+            <h2>Three engagement models.</h2>
+            <div class="section-desc">Every engagement starts with a 20-minute discovery call. No pitch. I diagnose first, then prescribe.</div>
 
-        <div class="products-grid">
-            <div class="product">
-                <div class="product-price">$17</div>
-                <div class="product-info">
-                    <div class="product-title">AI Agent Builder's Handbook</div>
-                    <div class="product-meta">12 pages · The complete path from zero to production</div>
+            <div class="engage-grid">
+                <div class="engage-card">
+                    <div class="engage-tier">Audit</div>
+                    <h3>24-Hour Agent Audit</h3>
+                    <p>I map every AI agent in your environment, score governance gaps across 6 dimensions, and deliver a prioritized action plan. You get a clear picture of what's running, what's exposed, and what to fix first.</p>
+                    <div class="engage-list">
+                        <span>Full agent inventory</span>
+                        <span>Governance scoring (6 dimensions)</span>
+                        <span>Gap analysis + recommendations</span>
+                        <span>Executive summary</span>
+                    </div>
                 </div>
-            </div>
-            <div class="product">
-                <div class="product-price">$9</div>
-                <div class="product-info">
-                    <div class="product-title">24-Hour AI Agent Audit</div>
-                    <div class="product-meta">7 pages · Find every governance gap in one day</div>
+                <div class="engage-card">
+                    <div class="engage-tier">Advisory</div>
+                    <h3>Architecture Design</h3>
+                    <p>I design the multi-agent system for your use case. Which agents you need, what each one controls, how they hand off work, where humans approve, and how everything gets logged.</p>
+                    <div class="engage-list">
+                        <span>Agent scope definitions</span>
+                        <span>Handoff protocol design</span>
+                        <span>Governance framework</span>
+                        <span>Context engineering strategy</span>
+                        <span>Implementation roadmap</span>
+                    </div>
                 </div>
-            </div>
-            <div class="product">
-                <div class="product-price">$13</div>
-                <div class="product-info">
-                    <div class="product-title">Multi-Agent Orchestration: 6 Patterns</div>
-                    <div class="product-meta">7 pages · When to use which pattern, with real code</div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="product-price">$17</div>
-                <div class="product-info">
-                    <div class="product-title">Deployment SOP: Zero to Production</div>
-                    <div class="product-meta">12 pages · Step-by-step from local to live</div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="product-price">$37</div>
-                <div class="product-info">
-                    <div class="product-title">AI Special Ops Starter Kit Bundle</div>
-                    <div class="product-meta">8 pages · The complete methodology in one package</div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="product-price">$13</div>
-                <div class="product-info">
-                    <div class="product-title">Prompt Engineering for AI Agents</div>
-                    <div class="product-meta">11 pages · 8 core techniques, production tested</div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="product-price">$9</div>
-                <div class="product-info">
-                    <div class="product-title">Community & Distribution Playbook</div>
-                    <div class="product-meta">8 pages · Build audience before you launch</div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="product-price">$9</div>
-                <div class="product-info">
-                    <div class="product-title">AEO: How to Be the Answer AI Gives</div>
-                    <div class="product-meta">6 pages · Answer Engine Optimization for AI era</div>
+                <div class="engage-card">
+                    <div class="engage-tier">Implementation</div>
+                    <h3>Production Build</h3>
+                    <p>I build and deploy the complete system. Context pipelines, agent coordination, runtime governance, observability, auto-sync. From architecture to live system in weeks.</p>
+                    <div class="engage-list">
+                        <span>Full system build</span>
+                        <span>Context pipeline setup</span>
+                        <span>Agent orchestration</span>
+                        <span>Governance + audit trail</span>
+                        <span>Knowledge graph deployment</span>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="products-cta">
-            <a href="https://aispecialops.gumroad.com" target="_blank" class="btn btn-primary">Browse the Store →</a>
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- FAQ (AEO-optimized) -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="faq">
+        <div class="container">
+            <div class="eyebrow">Frequently Asked Questions</div>
+            <h2>Common questions about AI agent orchestration.</h2>
+
+            <div class="faq-list">
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-q" itemprop="name">What is AI agent orchestration?</h3>
+                    <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">AI agent orchestration is the coordination of multiple AI agents working together on complex tasks. Instead of one AI doing everything, you have specialists: one researches, one qualifies, one drafts, one executes. Each agent has a defined scope, governance rules, and structured handoffs to the next. Think of it like a well-run team where everyone knows their role and there is a clear chain of responsibility.</p>
+                        <span class="cite">— Based on 34 architectural decisions in production systems</span>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-q" itemprop="name">What is runtime governance for AI agents?</h3>
+                    <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Runtime governance means verifying what an AI agent is doing at the moment it acts, not after. Traditional security checks who the agent is (authentication). Runtime governance checks what the agent is doing per action, in real time, with the ability to block unauthorized actions before they execute. Every action gets a timestamp, scope definition, and outcome record.</p>
+                        <span class="cite">— Distinction: authentication = WHO, governance = WHAT (per action)</span>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-q" itemprop="name">What is context engineering?</h3>
+                    <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Context engineering is designing the information architecture that feeds AI agents. Before an agent can make good decisions, it needs the right context: knowledge graphs, session memory, cross-channel intelligence, and structured data pipelines. Without context engineering, agents guess. With it, they have full situational awareness for every action they take. In practice, this means building capture layers (terminal, voice, mobile, desktop, reminders), auto-sorting incoming data, cross-linking knowledge, and syncing it all to every agent in the system.</p>
+                        <span class="cite">— Production system: 67 notes, 445+ wikilinks, 5 capture layers, 12h auto-sync</span>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-q" itemprop="name">What is the difference between authentication and runtime governance?</h3>
+                    <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Authentication verifies WHO the agent is. Runtime governance verifies WHAT the agent is doing. Authentication happens once at login. Governance happens at every action. An authenticated agent can still access data it should not, execute actions outside its scope, or make decisions without oversight. Runtime governance closes that gap by checking permissions, logging actions, and enforcing rules at the moment of execution.</p>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-q" itemprop="name">How long does an AI agent audit take?</h3>
+                    <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">A structured AI agent audit can be completed in 24 hours using a four-phase process: (1) inventory all running agents, (2) score governance gaps across 6 dimensions, (3) analyze findings with gap analysis, (4) deliver a prioritized action plan with executive summary. The result is a clear map of what's running, what's exposed, and what to fix first.</p>
+                    </div>
+                </article>
+
+                <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <h3 class="faq-q" itemprop="name">Can I start with an audit before committing to a full build?</h3>
+                    <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Yes. The audit is designed as a standalone engagement. You get a complete picture of your current agent environment with specific recommendations. Many teams start with an audit to understand their gaps, then move to advisory or implementation based on what the audit reveals. There is no obligation to continue beyond the audit.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- RESOURCES -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="products">
+        <div class="container">
+            <div class="eyebrow">Resources</div>
+            <h2>Frameworks extracted from production.</h2>
+            <div class="section-desc">Every resource comes from building and operating live systems. Battle-tested SOPs, decision frameworks, and implementation guides.</div>
+
+            <div class="products-strip">
+                <div class="product-item"><div class="product-name">AI Agent Builder's Handbook</div><div class="product-meta">12 pages — Zero to production</div><div class="product-price">$17</div></div>
+                <div class="product-item"><div class="product-name">24-Hour Agent Audit</div><div class="product-meta">7 pages — Find every gap</div><div class="product-price">$9</div></div>
+                <div class="product-item"><div class="product-name">Orchestration: 6 Patterns</div><div class="product-meta">7 pages — Which pattern, when</div><div class="product-price">$13</div></div>
+                <div class="product-item"><div class="product-name">Deployment SOP</div><div class="product-meta">12 pages — Local to live</div><div class="product-price">$17</div></div>
+                <div class="product-item"><div class="product-name">Starter Kit Bundle</div><div class="product-meta">8 pages — Complete methodology</div><div class="product-price">$37</div></div>
+                <div class="product-item"><div class="product-name">Prompt Engineering</div><div class="product-meta">11 pages — 8 core techniques</div><div class="product-price">$13</div></div>
+                <div class="product-item"><div class="product-name">Distribution Playbook</div><div class="product-meta">8 pages — Build audience first</div><div class="product-price">$9</div></div>
+                <div class="product-item"><div class="product-name">AEO Guide</div><div class="product-meta">6 pages — Be the answer AI gives</div><div class="product-price">$9</div></div>
+            </div>
+            <div class="store-link"><a href="https://aispecialops.gumroad.com" target="_blank">Browse all resources →</a></div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- BACKGROUND -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="background">
+        <div class="container">
+            <div class="eyebrow">Background</div>
+            <h2>Built through production.</h2>
+
+            <div class="bg-grid">
+                <div>
+                    <ul class="timeline">
+                        <li><span class="year">2017 — Present</span>TensorFlow to LLMs to multi-agent orchestration. Building AI systems since before the current wave.</li>
+                        <li><span class="year">Operations</span>5 years managing 400+ employees. Systems thinking applied to AI infrastructure.</li>
+                        <li><span class="year">MCP Production</span>1+ year of Model Context Protocol orchestration. 10+ enterprise integrations. 34 architectural decisions documented.</li>
+                        <li><span class="year">155K+ Words</span>Distilled into 22 knowledge files, 8 digital products, and a complete methodology.</li>
+                        <li><span class="year">Now</span>Designing agent governance systems for teams that need accountability, traceability, and runtime oversight.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
+                            <span class="terminal-title">system status — live</span>
+                        </div>
+                        <div class="terminal-body"><span class="t-prompt">$</span> <span class="t-cmd">esco health</span>
+
+<span class="t-ok">  SYSTEM HEALTH: 10/10</span>
+
+<span class="t-dim">  Knowledge base:</span>  <span class="t-hl">22 files</span>
+<span class="t-dim">  Vault notes:</span>     <span class="t-hl">67</span>
+<span class="t-dim">  Wikilinks:</span>       <span class="t-hl">445</span>
+<span class="t-dim">  RAG files:</span>       <span class="t-hl">102</span>
+<span class="t-dim">  Terminal cmds:</span>   <span class="t-hl">24</span>
+<span class="t-dim">  Capture layers:</span>  <span class="t-hl">5</span>
+<span class="t-dim">  Products built:</span>  <span class="t-hl">8/8</span>
+<span class="t-dim">  Auto-sync:</span>       <span class="t-ok">✓ live</span>
+<span class="t-dim">  Auto-pipeline:</span>   <span class="t-ok">✓ 12h cycle</span></div>
+                    </div>
+
+                    <div class="citation" style="margin-top: 1.5rem;">
+                        <p>"I built the methodology, ran it in production, and packaged the knowledge. Nobody else has all three."</p>
+                        <div class="source">— aimarian.com</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -631,14 +863,16 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-name">Marian Esco</div>
-        <div class="footer-role">AI Agent Orchestrator · AI Special Ops</div>
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/connecter/" target="_blank">LinkedIn</a>
-            <a href="https://aispecialops.gumroad.com" target="_blank">Gumroad</a>
-            <a href="mailto:AImarian@proton.me">AImarian@proton.me</a>
+        <div class="container">
+            <div class="footer-name">Marian Esco</div>
+            <div class="footer-links">
+                <a href="mailto:AImarian@proton.me">AImarian@proton.me</a>
+                <a href="https://www.linkedin.com/in/connecter/" target="_blank">LinkedIn</a>
+                <a href="https://aispecialops.gumroad.com" target="_blank">Resources</a>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-dim); max-width: 500px; margin: 1.5rem auto 0; line-height: 1.6;">AI Agent Orchestration · Runtime Governance · Context Engineering · Multi-Agent Systems · MCP · AI Observability · Agent Audit</p>
+            <div class="footer-close">Built with the system it describes.</div>
         </div>
-        <div class="footer-credit">Built with the system it describes.</div>
     </footer>
 
 </body>
