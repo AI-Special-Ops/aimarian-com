@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marian Esco — AI Agent Orchestrator</title>
+    <meta name="description" content="I build the systems that make AI agents accountable in production. Multi-agent orchestration, runtime governance, audit-grade observability.">
+    <meta property="og:title" content="Marian Esco — AI Agent Orchestrator">
+    <meta property="og:description" content="I build the systems that make AI agents accountable in production.">
+    <meta property="og:url" content="https://aimarian.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marian Esco — AI Agent Orchestrator">
+    <meta name="twitter:description" content="I build the systems that make AI agents accountable in production.">
+    <link rel="canonical" href="https://aimarian.com">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            background: #0a0a0f;
+            color: #c4c9d4;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        ::selection { background: rgba(99, 179, 237, 0.3); }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.2rem 2rem;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #e2e8f0;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links { display: flex; gap: 1.8rem; }
+
+        .nav-links a {
+            color: #8892a4;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a:hover { color: #e2e8f0; }
+
+        /* SECTIONS */
+        section {
+            padding: 7rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 5rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 179, 237, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 10%;
+            right: -15%;
+            pointer-events: none;
+        }
+
+        .hero-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #63b3ed;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards 0.2s;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #f0f4f8;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards 0.35s;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #63b3ed 0%, #68d391 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: #8892a4;
+            max-width: 580px;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards 0.5s;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards 0.65s;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: #63b3ed;
+            color: #0a0a0f;
+        }
+
+        .btn-primary:hover {
+            background: #90cdf4;
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #c4c9d4;
+        }
+
+        .btn-ghost:hover {
+            border-color: rgba(255,255,255,0.25);
+            color: #f0f4f8;
+            transform: translateY(-1px);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* SECTION HEADERS */
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #63b3ed;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #f0f4f8;
+            margin-bottom: 1.2rem;
+            letter-spacing: -1px;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: #8892a4;
+            max-width: 650px;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        /* WHAT I DO - CARDS */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            border-color: rgba(99, 179, 237, 0.2);
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.035);
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .card-icon-blue { background: rgba(99, 179, 237, 0.12); }
+        .card-icon-green { background: rgba(104, 211, 145, 0.12); }
+        .card-icon-purple { background: rgba(183, 148, 244, 0.12); }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin-bottom: 0.7rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #8892a4;
+            line-height: 1.7;
+        }
+
+        .card-stat {
+            margin-top: 1.2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+            font-size: 0.8rem;
+            color: #68d391;
+        }
+
+        /* PROOF - STATS */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #f0f4f8;
+            font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #8892a4;
+            line-height: 1.4;
+        }
+
+        .proof-quote {
+            background: rgba(99, 179, 237, 0.04);
+            border-left: 3px solid #63b3ed;
+            padding: 1.5rem 2rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 2rem;
+        }
+
+        .proof-quote p {
+            font-size: 1rem;
+            color: #c4c9d4;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        /* PRODUCTS */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.3rem 1.5rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .product:hover {
+            border-color: rgba(99, 179, 237, 0.2);
+            background: rgba(255,255,255,0.035);
+        }
+
+        .product-price {
+            font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #68d391;
+            background: rgba(104, 211, 145, 0.1);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .product-info { flex: 1; }
+
+        .product-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.2rem;
+        }
+
+        .product-meta {
+            font-size: 0.78rem;
+            color: #6b7280;
+        }
+
+        .products-cta {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        /* DIVIDER */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #f0f4f8;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-role {
+            font-size: 0.9rem;
+            color: #8892a4;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: #63b3ed;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: #90cdf4; }
+
+        .footer-credit {
+            font-size: 0.75rem;
+            color: #4a5568;
+            margin-top: 2rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.8rem; }
+
+            section { padding: 4rem 1.5rem; }
+
+            .hero { min-height: 90vh; }
+            .hero h1 { font-size: 2.4rem; letter-spacing: -1px; }
+            .hero-sub { font-size: 1.05rem; }
+
+            .section-title { font-size: 1.8rem; }
+
+            .cards-grid,
+            .stats-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat { padding: 1.5rem 1rem; }
+            .stat-number { font-size: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .hero-links { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-name">AIMarian</div>
+        <div class="nav-links">
+            <a href="#what">What I Do</a>
+            <a href="#proof">Proof</a>
+            <a href="#products">Products</a>
+            <a href="mailto:AImarian@proton.me">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-label">AI Agent Orchestrator</div>
+        <h1>I build the systems<br>that make AI agents<br><span>accountable in production.</span></h1>
+        <p class="hero-sub">Multi-agent orchestration, runtime governance, and audit-grade observability. Not theory.. practice. Five AI actors coordinated daily through structured handoffs with governance rules enforced per action.</p>
+        <div class="hero-links">
+            <a href="https://www.linkedin.com/in/connecter/" target="_blank" class="btn btn-primary">LinkedIn</a>
+            <a href="https://aispecialops.gumroad.com" target="_blank" class="btn btn-ghost">Gumroad Store</a>
+            <a href="mailto:AImarian@proton.me" class="btn btn-ghost">AImarian@proton.me</a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- WHAT I DO -->
+    <section id="what">
+        <div class="section-label">What I Do</div>
+        <div class="section-title">Three things, all in production.</div>
+        <div class="section-desc">Most people talk about AI agents. I build the infrastructure that keeps them accountable. Every system below runs daily.</div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon card-icon-blue">⚡</div>
+                <h3>Multi-Agent Orchestration</h3>
+                <p>Five AI actors coordinated through structured handoffs. Each agent has a defined scope, clear inputs/outputs, and governance rules. Not one monolithic prompt.. a system of specialists.</p>
+                <div class="card-stat">5 actors · structured handoffs · daily ops</div>
+            </div>
+            <div class="card">
+                <div class="card-icon card-icon-green">🛡</div>
+                <h3>Runtime Governance</h3>
+                <p>Every agent action is verified before execution. Not after-the-fact logging. Real-time enforcement. Per action. With audit-grade observability so you can trace exactly what happened and why.</p>
+                <div class="card-stat">per-action verification · full audit trail</div>
+            </div>
+            <div class="card">
+                <div class="card-icon card-icon-purple">🔧</div>
+                <h3>Production Deployment</h3>
+                <p>Terminal command center (24 commands), auto-sync pipelines, knowledge graph with 445+ connections, capture layers across 5 surfaces. Everything built to run unsupervised.</p>
+                <div class="card-stat">24 commands · 5 capture layers · auto-sync</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PROOF -->
+    <section id="proof">
+        <div class="section-label">Production Proof</div>
+        <div class="section-title">Numbers from a live system.</div>
+        <div class="section-desc">This isn't a demo. These are real metrics from the orchestration system I operate every day.</div>
+
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-number">5</div>
+                <div class="stat-label">AI Actors<br>Coordinated Daily</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">66</div>
+                <div class="stat-label">Vault Notes<br>(Obsidian Knowledge Graph)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">445+</div>
+                <div class="stat-label">Wikilinks<br>(Connected Knowledge)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">34</div>
+                <div class="stat-label">Architectural Decisions<br>Documented</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">24</div>
+                <div class="stat-label">Terminal Commands<br>(esco.py)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Enterprise<br>Integrations</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">155K+</div>
+                <div class="stat-label">Words Distilled<br>Into Frameworks</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Digital Products<br>Built & Ready</div>
+            </div>
+        </div>
+
+        <div class="proof-quote">
+            <p>I built the methodology, ran it in production, and packaged the knowledge. Five years managing 400+ people in operations. Then TensorFlow since 2017, LLMs since market availability, and 1+ year of production MCP orchestration. The system you see here is the result.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+        <div class="section-label">Products</div>
+        <div class="section-title">Frameworks from production, not theory.</div>
+        <div class="section-desc">Everything here comes from building and operating multi-agent systems. Battle-tested patterns, SOPs, and decision frameworks.. packaged so you can use them.</div>
+
+        <div class="products-grid">
+            <div class="product">
+                <div class="product-price">$17</div>
+                <div class="product-info">
+                    <div class="product-title">AI Agent Builder's Handbook</div>
+                    <div class="product-meta">12 pages · The complete path from zero to production</div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-price">$9</div>
+                <div class="product-info">
+                    <div class="product-title">24-Hour AI Agent Audit</div>
+                    <div class="product-meta">7 pages · Find every governance gap in one day</div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-price">$13</div>
+                <div class="product-info">
+                    <div class="product-title">Multi-Agent Orchestration: 6 Patterns</div>
+                    <div class="product-meta">7 pages · When to use which pattern, with real code</div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-price">$17</div>
+                <div class="product-info">
+                    <div class="product-title">Deployment SOP: Zero to Production</div>
+                    <div class="product-meta">12 pages · Step-by-step from local to live</div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-price">$37</div>
+                <div class="product-info">
+                    <div class="product-title">AI Special Ops Starter Kit Bundle</div>
+                    <div class="product-meta">8 pages · The complete methodology in one package</div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-price">$13</div>
+                <div class="product-info">
+                    <div class="product-title">Prompt Engineering for AI Agents</div>
+                    <div class="product-meta">11 pages · 8 core techniques, production tested</div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-price">$9</div>
+                <div class="product-info">
+                    <div class="product-title">Community & Distribution Playbook</div>
+                    <div class="product-meta">8 pages · Build audience before you launch</div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-price">$9</div>
+                <div class="product-info">
+                    <div class="product-title">AEO: How to Be the Answer AI Gives</div>
+                    <div class="product-meta">6 pages · Answer Engine Optimization for AI era</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="products-cta">
+            <a href="https://aispecialops.gumroad.com" target="_blank" class="btn btn-primary">Browse the Store →</a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-name">Marian Esco</div>
+        <div class="footer-role">AI Agent Orchestrator · AI Special Ops</div>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/connecter/" target="_blank">LinkedIn</a>
+            <a href="https://aispecialops.gumroad.com" target="_blank">Gumroad</a>
+            <a href="mailto:AImarian@proton.me">AImarian@proton.me</a>
+        </div>
+        <div class="footer-credit">Built with the system it describes.</div>
+    </footer>
+
+</body>
+</html>
