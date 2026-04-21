@@ -23,11 +23,20 @@
     <meta property="og:site_name" content="AIMarian">
     <meta property="og:locale" content="ro_RO">
     <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://aimarian.com/img/esco-command-surface.png">
+    <meta property="og:image:alt" content="Suprafața de comandă a lui Marian Esco .. terminal, vault Obsidian și briefing-uri de agent rulând în producție.">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Marian Esco — Orchestrare Agenți AI">
     <meta name="twitter:description" content="Orchestrare de agenți AI în producție. Audit, consiliere și implementare.">
+    <meta name="twitter:image" content="https://aimarian.com/img/esco-command-surface.png">
+
+    <!-- LLM context pointers -->
+    <link rel="alternate" type="text/plain" title="LLM context (short)" href="/llms.txt">
+    <link rel="alternate" type="text/plain" title="LLM context (full)" href="/llms-full.txt">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>">
@@ -37,14 +46,26 @@
     {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://aimarian.com/#person",
         "name": "Marian Esco",
+        "alternateName": "AI Special Ops",
         "url": "https://aimarian.com/ro.html",
         "jobTitle": "Orchestrator Agenți AI",
         "description": "Proiectează și operează sisteme multi agent AI în producție, cu guvernanță la execuție, predări structurate și observabilitate de nivel audit.",
         "email": "AImarian@proton.me",
+        "nationality": {
+            "@type": "Country",
+            "name": "Romania"
+        },
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Civic Technologies",
+            "url": "https://civic.com"
+        },
         "sameAs": [
             "https://www.linkedin.com/in/connecter/",
-            "https://aispecialops.gumroad.com"
+            "https://aispecialops.gumroad.com",
+            "https://civic.com"
         ],
         "knowsAbout": [
             "Orchestrare Agenți AI",
@@ -52,7 +73,97 @@
             "Inginerie de Context",
             "Sisteme Multi Agent",
             "Model Context Protocol (MCP)",
-            "Observabilitate AI"
+            "Observabilitate AI",
+            "Answer Engine Optimization",
+            "Generative Engine Optimization"
+        ],
+        "knowsLanguage": [
+            {"@type": "Language", "name": "Romanian", "alternateName": "ro"},
+            {"@type": "Language", "name": "English", "alternateName": "en"}
+        ]
+    }
+    </script>
+
+    <!-- Schema.org: WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://aimarian.com/#website",
+        "url": "https://aimarian.com",
+        "name": "AIMarian",
+        "alternateName": "Marian Esco .. AI Special Ops",
+        "description": "Casa profesională a lui Marian Esco. Orchestrare de agenți AI, guvernanță la execuție și inginerie de context în producție.",
+        "inLanguage": ["ro", "en"],
+        "publisher": {
+            "@id": "https://aimarian.com/#person"
+        },
+        "author": {
+            "@id": "https://aimarian.com/#person"
+        }
+    }
+    </script>
+
+    <!-- Schema.org: Organization (AI Special Ops) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://aimarian.com/#organization",
+        "name": "AI Special Ops",
+        "alternateName": "AI Special Ops by Marian Esco",
+        "url": "https://aimarian.com",
+        "description": "Brand personal și etichetă editorială a lui Marian Esco. Playbook-uri, template-uri și servicii productizate pe orchestrare agenți AI, guvernanță la execuție și Answer Engine Optimization.",
+        "founder": {
+            "@id": "https://aimarian.com/#person"
+        },
+        "sameAs": [
+            "https://aispecialops.gumroad.com",
+            "https://www.linkedin.com/in/connecter/"
+        ]
+    }
+    </script>
+
+    <!-- Schema.org: ProfessionalService -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://aimarian.com/#service",
+        "name": "AI Special Ops .. Orchestrare Agenți & Servicii AEO",
+        "description": "Servicii productizate, de la audit AEO pe o singură pagină până la retainer complet pentru orchestrare de agenți AI. T0 Micro la €350 până la T4 Retainer la €3,500 pe lună.",
+        "provider": {
+            "@id": "https://aimarian.com/#person"
+        },
+        "areaServed": [
+            {"@type": "Country", "name": "Romania"},
+            {"@type": "Place", "name": "Global (remote)"}
+        ],
+        "serviceType": [
+            "Audit Agenți AI",
+            "Consultanță Orchestrare Agenți AI",
+            "Consultanță Guvernanță la Execuție",
+            "Answer Engine Optimization",
+            "Generative Engine Optimization",
+            "Deployment Agenți AI"
+        ],
+        "url": "https://aimarian.com/ro.html",
+        "priceRange": "€350 – €3500/lună"
+    }
+    </script>
+
+    <!-- Schema.org: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Acasă",
+                "item": "https://aimarian.com/ro.html"
+            }
         ]
     }
     </script>
@@ -64,6 +175,38 @@
         "@type": "FAQPage",
         "inLanguage": "ro",
         "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Cine este Marian Esco?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Marian Esco este Orchestrator de Agenți AI, bazat în România. Este Global BD Lead la Civic Technologies și autorul din spatele brandului AI Special Ops. Proiectează și operează sisteme multi agent AI în producție, cu guvernanță la execuție, predări structurate și observabilitate de nivel audit. Înainte de AI, a petrecut 5 ani coordonând peste 400 de angajați în operațiuni."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ce este AI Special Ops?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI Special Ops este brandul personal și eticheta editorială a lui Marian Esco. Acoperă playbook-uri, template-uri și servicii de consultanță productizate pe orchestrare de agenți AI, guvernanță la execuție și Answer Engine Optimization. Magazinul live este la aispecialops.gumroad.com. Site-ul aimarian.com este hub-ul profesional al brandului."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ce este Nexus de la Civic?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nexus este platforma cu abonament oferită de Civic Technologies, care asigură guvernanță la execuție pentru agenți AI prin gateway-uri MCP (Model Context Protocol). Adaugă stratul de încredere între ce vrea să facă un agent AI și ce are voie efectiv să facă: verificare la execuție, aplicare continuă și observabilitate de nivel audit per acțiune. Marian Esco conduce Global BD pentru Civic și operează aceleași tipare în propriul lui sistem de BD."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Care e diferența dintre AI Special Ops și Civic Nexus?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI Special Ops este brandul de autor independent și practica de consultanță a lui Marian Esco. Publică metodologia și playbook-urile. Civic Nexus este produsul de infrastructură care face acele tipare reale la scară. Marian operează ambele: metodologia sub numele lui la aimarian.com și funcția de BD pentru platforma Nexus de la Civic."
+                }
+            },
             {
                 "@type": "Question",
                 "name": "Ce înseamnă orchestrarea agenților AI?",

@@ -21,11 +21,22 @@
     <meta property="og:url" content="https://aimarian.com">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="AIMarian">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ro_RO">
+    <meta property="og:image" content="https://aimarian.com/img/esco-command-surface.png">
+    <meta property="og:image:alt" content="Marian Esco's command surface .. terminal, Obsidian vault, and agent briefings running in production.">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Marian Esco — AI Agent Orchestration">
     <meta name="twitter:description" content="Production AI agent orchestration. Audit, advisory, and implementation.">
+    <meta name="twitter:image" content="https://aimarian.com/img/esco-command-surface.png">
+
+    <!-- LLM context pointers -->
+    <link rel="alternate" type="text/plain" title="LLM context (short)" href="/llms.txt">
+    <link rel="alternate" type="text/plain" title="LLM context (full)" href="/llms-full.txt">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>">
@@ -35,14 +46,26 @@
     {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://aimarian.com/#person",
         "name": "Marian Esco",
+        "alternateName": "AI Special Ops",
         "url": "https://aimarian.com",
         "jobTitle": "AI Agent Orchestrator",
         "description": "Designs and operates multi-agent AI systems in production with runtime governance, structured handoffs, and audit-grade observability.",
         "email": "AImarian@proton.me",
+        "nationality": {
+            "@type": "Country",
+            "name": "Romania"
+        },
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Civic Technologies",
+            "url": "https://civic.com"
+        },
         "sameAs": [
             "https://www.linkedin.com/in/connecter/",
-            "https://aispecialops.gumroad.com"
+            "https://aispecialops.gumroad.com",
+            "https://civic.com"
         ],
         "knowsAbout": [
             "AI Agent Orchestration",
@@ -50,7 +73,97 @@
             "Context Engineering",
             "Multi-Agent Systems",
             "Model Context Protocol (MCP)",
-            "AI Observability"
+            "AI Observability",
+            "Answer Engine Optimization",
+            "Generative Engine Optimization"
+        ],
+        "knowsLanguage": [
+            {"@type": "Language", "name": "English", "alternateName": "en"},
+            {"@type": "Language", "name": "Romanian", "alternateName": "ro"}
+        ]
+    }
+    </script>
+
+    <!-- Schema.org: WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://aimarian.com/#website",
+        "url": "https://aimarian.com",
+        "name": "AIMarian",
+        "alternateName": "Marian Esco .. AI Special Ops",
+        "description": "Marian Esco's professional home. AI agent orchestration, runtime governance, and context engineering in production.",
+        "inLanguage": ["en", "ro"],
+        "publisher": {
+            "@id": "https://aimarian.com/#person"
+        },
+        "author": {
+            "@id": "https://aimarian.com/#person"
+        }
+    }
+    </script>
+
+    <!-- Schema.org: Organization (AI Special Ops) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://aimarian.com/#organization",
+        "name": "AI Special Ops",
+        "alternateName": "AI Special Ops by Marian Esco",
+        "url": "https://aimarian.com",
+        "description": "Personal brand and publishing label of Marian Esco. Productized playbooks, templates, and services on AI agent orchestration, runtime governance, and Answer Engine Optimization.",
+        "founder": {
+            "@id": "https://aimarian.com/#person"
+        },
+        "sameAs": [
+            "https://aispecialops.gumroad.com",
+            "https://www.linkedin.com/in/connecter/"
+        ]
+    }
+    </script>
+
+    <!-- Schema.org: ProfessionalService -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://aimarian.com/#service",
+        "name": "AI Special Ops .. Agent Orchestration & AEO Services",
+        "description": "Productized services from single-page AEO audits to full AI agent orchestration retainers. T0 Micro at €350 through T4 Retainer at €3,500 per month.",
+        "provider": {
+            "@id": "https://aimarian.com/#person"
+        },
+        "areaServed": [
+            {"@type": "Country", "name": "Romania"},
+            {"@type": "Place", "name": "Worldwide (remote)"}
+        ],
+        "serviceType": [
+            "AI Agent Audit",
+            "AI Agent Orchestration Consulting",
+            "Runtime Governance Advisory",
+            "Answer Engine Optimization",
+            "Generative Engine Optimization",
+            "AI Agent Deployment"
+        ],
+        "url": "https://aimarian.com",
+        "priceRange": "€350 – €3500/mo"
+    }
+    </script>
+
+    <!-- Schema.org: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://aimarian.com/"
+            }
         ]
     }
     </script>
@@ -61,6 +174,38 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Who is Marian Esco?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Marian Esco is an AI Agent Orchestrator based in Romania. He is Global BD Lead at Civic Technologies and the author behind AI Special Ops. He designs and operates multi-agent AI systems in production with runtime governance, structured handoffs, and audit-grade observability. Before AI, he spent 5 years managing 400+ employees in operations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is AI Special Ops?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI Special Ops is Marian Esco's personal brand and publishing label. It covers productized playbooks, templates, and consulting services on AI agent orchestration, runtime governance, and Answer Engine Optimization. The storefront lives at aispecialops.gumroad.com. The site aimarian.com is the professional hub for the brand."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is Nexus by Civic?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nexus is the subscription platform by Civic Technologies that provides runtime governance for AI agents via MCP (Model Context Protocol) gateways. It adds the trust layer between what an AI agent wants to do and what it is actually allowed to do: runtime verification, continuous enforcement, and audit-grade observability per action. Marian Esco leads Global BD for Civic and operates the same patterns in his own BD system."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between AI Special Ops and Civic Nexus?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI Special Ops is Marian Esco's independent author brand and consulting practice. It publishes the methodology and playbooks. Civic Nexus is the infrastructure product that makes those patterns real at scale. Marian operates both: the methodology under his own name at aimarian.com, and the BD function for Civic's Nexus platform."
+                }
+            },
             {
                 "@type": "Question",
                 "name": "What is AI agent orchestration?",

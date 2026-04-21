@@ -1,0 +1,42 @@
+# Marian Esco .. AI Special Ops
+
+> Marian Esco is an AI Agent Orchestrator based in Romania. He designs and operates multi-agent AI systems in production with runtime governance, structured handoffs, and audit-grade observability. This site (aimarian.com) is his professional home on the internet.
+
+Marian works as Global BD Lead at Civic Technologies, where the product Nexus provides runtime governance for AI agents via MCP (Model Context Protocol) gateways. Before AI, Marian spent 5 years managing 400+ employees in operations. He ships under the personal brand "AI Special Ops" and publishes productized playbooks and templates.
+
+Core thesis: Agents need runtime gateways, not just credentials. Most AI vendors verify WHO an agent is. Marian builds and operates systems that verify WHAT agents do at runtime, per action, with audit-grade observability.
+
+The site offers a dual view: a human reading mode and an agent mode for LLM crawlers. Both modes serve the same content. There are no tracking cookies, no analytics walls, and no paywalls on editorial.
+
+## Pages
+
+- [Home (EN)](https://aimarian.com/): Personal brand hub. Who Marian is, what he ships, how to engage.
+- [Home (RO)](https://aimarian.com/ro.html): Romanian mirror of the home page. Same content, localized tone.
+- [How I Actually Use AI At Work](https://aimarian.com/writing/how-i-actually-use-ai-at-work.html): First-person essay on day-to-day multi-agent orchestration. Real patterns, not hype.
+
+## Topics Marian writes and consults on
+
+- AI Agent Orchestration: Coordinating multiple AI actors through structured handoffs and shared state.
+- Runtime Governance: Enforcing what an agent is allowed to do at the moment of action, not at onboarding.
+- Context Engineering: Designing the information an agent receives so it behaves predictably.
+- Multi-Agent Systems: Patterns for role separation, escalation, and audit trails across agents.
+- Model Context Protocol (MCP): Gateways, tool exposure, credential scoping per action.
+- AI Observability: Logging every agent action with timestamp, scope, outcome.
+- Answer Engine Optimization (AEO): Structuring content so LLMs cite you correctly.
+- Productized AI services: T0 audits through T4 retainers, verticalized for pharmacy, finance, and local SMB.
+
+## Who Marian is NOT
+
+- Not a consultant selling ambiguous "AI transformation" slides.
+- Not a tool reseller.
+- Not Civic's sole voice. Civic's product is Nexus. Marian operates Civic's BD system but is an independent author under AI Special Ops.
+
+## Contact
+
+- Email: AImarian@proton.me
+- LinkedIn: https://www.linkedin.com/in/connecter/
+- Gumroad storefront: https://aispecialops.gumroad.com
+
+## Full expanded context
+
+For a longer, more detailed version of this file with Marian's full bio, methodology, product catalog, and frequently asked questions, see: https://aimarian.com/llms-full.txt
