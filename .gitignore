@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+ehthumbs.db
+Thumbs.db
+
+# editor swap / temp
+*.swp
+*.swo
+*~
+
+# env / local
+.env
+.env.local

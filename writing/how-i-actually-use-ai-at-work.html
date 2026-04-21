@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>How I Actually Use AI at Work — Marian Esco</title>
+    <meta name="description" content="No jargon, no hype. Plain language walkthrough of the AI system Marian Esco actually uses every day. One organized vault, multiple capture methods, one sync command.">
+    <meta name="author" content="Marian Esco">
+    <link rel="canonical" href="https://aimarian.com/writing/how-i-actually-use-ai-at-work.html">
+
+    <meta property="og:title" content="How I Actually Use AI at Work">
+    <meta property="og:description" content="No jargon, no hype. Just what my AI system does for me every day.">
+    <meta property="og:url" content="https://aimarian.com/writing/how-i-actually-use-ai-at-work.html">
+    <meta property="og:type" content="article">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How I Actually Use AI at Work">
+    <meta name="twitter:description" content="No jargon, no hype. Just what my AI system does for me every day.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How I Actually Use AI at Work",
+        "description": "No jargon, no hype. Plain language walkthrough of the AI system Marian Esco actually uses every day.",
+        "author": {
+            "@type": "Person",
+            "name": "Marian Esco",
+            "url": "https://aimarian.com"
+        },
+        "datePublished": "2026-04-20",
+        "dateModified": "2026-04-21",
+        "mainEntityOfPage": "https://aimarian.com/writing/how-i-actually-use-ai-at-work.html"
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        :root {
+            --bg: #06060a;
+            --bg-elevated: #0c0c12;
+            --bg-card: #0f0f16;
+            --border: rgba(255,255,255,0.06);
+            --border-hover: rgba(255,255,255,0.12);
+            --text: #a0a0b0;
+            --text-bright: #e8e8f0;
+            --text-dim: #5a5a6e;
+            --accent: #c9a55a;
+            --accent-dim: rgba(201,165,90,0.12);
+            --accent-glow: rgba(201,165,90,0.06);
+            --green: #4ade80;
+            --cyan: #22E5A4;
+            --mono: 'JetBrains Mono', 'SF Mono', 'Monaco', monospace;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        ::selection { background: rgba(201,165,90,0.25); }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.2rem 3rem;
+            background: rgba(6,6,10,0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+            gap: 2rem;
+        }
+        .nav-name { font-weight: 600; font-size: 0.85rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; }
+        .nav-name a { color: inherit; text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.5px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--text-bright); }
+        .nav-lang { font-family: var(--mono); font-size: 0.7rem; color: var(--text-dim); letter-spacing: 1px; padding: 0.2rem 0.5rem; border: 1px solid var(--border); border-radius: 3px; }
+        .nav-lang:hover { color: var(--accent); border-color: var(--accent); }
+
+        /* ARTICLE */
+        .article-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 1px;
+            margin-bottom: 3rem;
+            transition: color 0.3s;
+        }
+        .back-link:hover { color: var(--accent); }
+
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            color: var(--text-bright);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text);
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .byline {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .article-body h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-bright);
+            letter-spacing: -0.01em;
+            margin: 3.5rem 0 1.2rem;
+        }
+
+        .article-body p {
+            font-size: 1rem;
+            color: var(--text);
+            line-height: 1.85;
+            margin-bottom: 1.3rem;
+            font-weight: 300;
+        }
+
+        .article-body p.lead-in {
+            font-weight: 400;
+            color: var(--text-bright);
+        }
+
+        .article-body strong {
+            color: var(--text-bright);
+            font-weight: 500;
+        }
+
+        .pull-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 2px solid var(--accent);
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            border-radius: 2px;
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .ba-row {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 1.2rem 1.5rem;
+            border-radius: 2px;
+        }
+        .ba-row .label {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+        .ba-row.before .label { color: var(--text-dim); }
+        .ba-row.after .label { color: var(--cyan); }
+        .ba-row p { margin-bottom: 0; font-size: 0.95rem; }
+
+        .signoff {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            letter-spacing: 0.5px;
+        }
+
+        .back-to-site {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .back-to-site a {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 0.9rem 1.8rem;
+            border: 1px solid var(--accent-dim);
+            border-radius: 2px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        .back-to-site a:hover {
+            background: var(--accent-dim);
+            border-color: var(--accent);
+        }
+
+        @media (max-width: 640px) {
+            nav { padding: 1rem 1.2rem; gap: 1rem; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.72rem; }
+            .article-wrap { padding: 7rem 1.3rem 3rem; }
+            h1 { font-size: 2rem; }
+            .article-body h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav aria-label="Main navigation">
+        <div class="nav-name"><a href="../index.html">Marian Esco</a></div>
+        <div class="nav-links">
+            <a href="../index.html#problem">The Problem</a>
+            <a href="../index.html#how">How I Solve It</a>
+            <a href="../index.html#engage">Work With Me</a>
+            <a href="../index.html#writing">Writing</a>
+            <a href="mailto:AImarian@proton.me">Contact</a>
+            <a href="../ro.html" class="nav-lang" aria-label="Română">RO</a>
+        </div>
+    </nav>
+
+    <!-- ARTICLE -->
+    <article class="article-wrap">
+        <a href="../index.html#writing" class="back-link">← back to writing</a>
+
+        <div class="eyebrow">Writing  ..  Building in Public</div>
+        <h1>How I Actually Use AI at Work</h1>
+        <p class="subtitle">No jargon. No hype. Just what it does for me every day.</p>
+        <div class="byline">Marian Esco  ..  April 2026</div>
+
+        <div class="article-body">
+
+            <h2>The problem I was solving</h2>
+
+            <p class="lead-in">I work in business development. That means I talk to a lot of people, research a lot of companies, write a lot of messages, track a lot of conversations, and make a lot of decisions.. every single day.</p>
+
+            <p>Before I built this system, my workday looked something like this:</p>
+
+            <p><strong>Notes everywhere.</strong> Some in a notes app, some in documents, some in my head. If someone asked me "what did you discuss with that person 3 weeks ago" I'd spend 10 minutes searching.</p>
+
+            <p><strong>Context lost between sessions.</strong> Every time I started working with an AI assistant, I had to re-explain everything. Who I am, what I do, what I'm working on, what happened yesterday. Like starting every conversation from zero.</p>
+
+            <p><strong>Repetitive busywork.</strong> Updating files in 3 places. Copy-pasting the same information. Manually syncing things that should sync themselves.</p>
+
+            <p>I knew AI could help. But not the way most people think about it.</p>
+
+            <h2>What I actually built</h2>
+
+            <p class="lead-in">I didn't build a robot. I built a workspace that remembers everything and keeps itself organized.</p>
+
+            <p>Here's what it is, in plain terms:</p>
+
+            <p><strong>One central knowledge base</strong> (an Obsidian vault) where everything lives. Every person I talk to, every decision I make, every project I'm working on.. it's all in one place, linked together.</p>
+
+            <p><strong>Multiple capture methods that feed into it.</strong> Terminal commands, phone notes, voice recordings from a wearable pendant, desktop editing. All roads lead to the same knowledge base.</p>
+
+            <p><strong>A sync pipeline that keeps everything current.</strong> One command and the entire system updates.. my local AI reads from the same files I edit.</p>
+
+            <div class="pull-card">That's it. That's the whole system. One brain, multiple ways to feed it, and everything stays organized without me having to think about it.</div>
+
+            <h2>What a typical day looks like</h2>
+
+            <p><strong>Morning (3 minutes):</strong> I open my terminal and type one command. It shows me what changed overnight, what's out of sync, what I need to focus on today, and whether any notes are sitting unsorted. Three minutes and I know exactly where I stand.</p>
+
+            <p><strong>During the day:</strong> A thought hits me while I'm on a call? I type a quick command and it's captured. I'm on my phone between meetings? I write a note and it syncs to my laptop automatically. I'm wearing my voice recorder pendant and I say something worth keeping? It gets transcribed and filed.</p>
+
+            <p><strong>After a call:</strong> I update the person's note. The system connects it to every other interaction, decision, and project related to that person. Next time I need context, it's all there. No digging.</p>
+
+            <p><strong>End of day (5 minutes):</strong> I fill in what got done, what decisions I made, and what carries forward to tomorrow. I sort any notes that landed in my inbox. One sync command, and everything is up to date across the entire system.</p>
+
+            <p>The point isn't the technology. The point is that I spend maybe 10 minutes a day on system maintenance.. and in return, I never lose context, I never forget what was discussed, and I never start from scratch.</p>
+
+            <h2>What actually changed</h2>
+
+            <div class="before-after">
+                <div class="ba-row before">
+                    <div class="label">Before</div>
+                    <p>30+ minutes daily on file management, searching, context rebuilding.</p>
+                </div>
+                <div class="ba-row after">
+                    <div class="label">After</div>
+                    <p>Under 10 minutes. Everything captured, linked, searchable.</p>
+                </div>
+                <div class="ba-row before">
+                    <div class="label">Before</div>
+                    <p>Starting every AI session from zero.</p>
+                </div>
+                <div class="ba-row after">
+                    <div class="label">After</div>
+                    <p>AI reads from the same organized vault. Full context from day one.</p>
+                </div>
+                <div class="ba-row before">
+                    <div class="label">Before</div>
+                    <p>Ideas lost between phone, laptop, voice notes, meetings.</p>
+                </div>
+                <div class="ba-row after">
+                    <div class="label">After</div>
+                    <p>Four capture methods, one destination. Nothing falls through.</p>
+                </div>
+            </div>
+
+            <h2>The simple insight</h2>
+
+            <p>Most people think "using AI" means asking ChatGPT a question and getting an answer. That's useful, but it's like using a calculator for one equation and then forgetting the result.</p>
+
+            <p>What I built is different. My AI doesn't just answer questions.. it remembers. It knows what I'm working on, who I've talked to, what decisions I've made, and what my priorities are. Because I set it up to read from the same organized system I use every day.</p>
+
+            <div class="pull-card">The AI isn't the point. The organized system is the point. The AI just makes it 10x more useful b/c it can instantly find, connect, and surface information that would take me hours to dig up manually.</div>
+
+            <h2>Why this matters for anyone who works with information</h2>
+
+            <p>You don't need to be a programmer to benefit from this kind of setup. The principles work for anyone:</p>
+
+            <p><strong>One source of truth.</strong> Don't keep the same information in 5 places. Pick one home for your knowledge, and let everything else pull from it.</p>
+
+            <p><strong>Capture everything, sort later.</strong> The best system is the one you actually use. If capturing a thought takes more than 10 seconds, you won't do it. Make it effortless.</p>
+
+            <p><strong>Connect, don't just store.</strong> A note that links to nothing is a note you'll never find again. The value isn't in individual notes.. it's in the connections between them.</p>
+
+            <p><strong>Let the machine do the repetitive work.</strong> Syncing, organizing, searching, summarizing.. these are things computers are great at. Save your energy for the thinking.</p>
+
+            <p>The whole thing runs on my laptop. No cloud subscriptions. No monthly fees. Just a notes app, a terminal tool I built, and a local AI that reads from my own files. Total cost: my time to set it up.</p>
+
+            <div class="signoff">
+                Marian Esco<br>
+                April 2026
+            </div>
+
+            <div class="back-to-site">
+                <a href="../index.html#engage">Work with me →</a>
+            </div>
+
+        </div>
+    </article>
+
+</body>
+</html>
